@@ -19,13 +19,40 @@ To analyze quarterly product sales data across multiple products and quarters us
 ## Program
 
 # Step 1: Create 2D array (Rows = Products, Columns = Quarters)
-<<Enter your code>>
+sales = np.array([
+        [12000, 15000, 14000, 16000],  # Product 1 (Q1-Q4)
+        [9500, 11000, 10500, 12500],   # Product 2 (Q1-Q4)
+        [18000, 17500, 19000, 21000],  # Product 3 (Q1-Q4)
+    ])
+
 # Step 2: Calculate Aggregations and Summary Statistics
-<<Enter your code>>
+   stats = analyze_sales(sales)
+   
 # Step 3: Display Summary
-<<Enter your code>>
+ print("=== Quarterly Product Sales Analysis ===\n")
+    print("Sales Matrix (Rows = Products, Columns = Q1..Q4):")
+    print(sales)
+
+    print("\nProduct-Wise Total Sales:")
+    for idx, total in enumerate(stats["product_totals"], start=1):
+        print(f"  Product {idx}: {total:.2f}")
+
+    print("\nQuarter-Wise Total Sales:")
+    for q_idx, total in enumerate(stats["quarter_totals"], start=1):
+        print(f"  Q{q_idx}: {total:.2f}")
+
+    print("\nOverall Summary Statistics:")
+    print(f"  Overall Mean Sales : {stats['mean_sales']:.2f}")
+    print(f"  Highest Sale       : {stats['max_sales']:.2f}")
+    print(f"  Lowest Sale        : {stats['min_sales']:.2f}")
+
+
+if _name_ == "_main_":
+    main()
+
 
 ## Output
+<img width="537" height="522" alt="image" src="https://github.com/user-attachments/assets/92b0a277-4fb0-49b7-9c84-1619147e756b" />
 
 
 ## Result
